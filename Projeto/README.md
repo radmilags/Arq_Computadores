@@ -1,4 +1,5 @@
 Projeto 1 - conversor
+
 **-O que faz?**
 Lê um arquivo txt, que possui um código em linguagem Assembly (extensão asm). Converte esse código para binário,
 depois para hexadecimal, para então gerar um outro txt com essa conversão em hexadecimal.
