@@ -1,4 +1,4 @@
-.include "cenario.asm"
+.include "cenario1.asm"
 
 .text
 
