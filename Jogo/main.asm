@@ -1,28 +1,15 @@
 .include "cenario1.asm"
 .text
 
-# orientacoes:
-# este programa funciona para as seguintes configuracoes graficas:
-	
-	# Unit Width in Pixels: 4
-	# Unit Height in Pixels: 4
-	# Display Width in Pixels: 512
-	# Display Height in Pixels: 256
-	
-# copie e cole o mapa de bits do cenario e o mapa do personagem em .data
-# altere os parametros de base e altura do personagem
-# altere os paramentros de x e y iniciais e finais
-# altere como o movimento acontecerá na tela modificando o laco da animacao
-
 main: 	
 	# parametros globais
-	addi $22, $0, 8 # base do personagem
-	addi $23, $0, 5 # altura do personagem
+	addi $22, $0, 11 # base do personagem
+	addi $23, $0, 11 # altura do personagem
 	mul $26 $22 $23 # area do personagem (base * altura)
-	addi $26 $26 8192 # tamanho da tela
-	addi $18, $0, 15 # x inicial
-	addi $19, $0, 20 # y inicial
-	addi $20, $0, 50 # x final. evite ultrapassar 127
+	addi $26 $26 32768 # tamanho da tela
+	addi $18, $0, 117 # x inicial
+	addi $19, $0, 240 # y inicial
+	addi $20, $0, 100 # x final. evite ultrapassar 127
 	addi $21, $0, 15 # y final. evite ultrapassar 63
 	
 	# chamada de funcao para
@@ -50,7 +37,7 @@ main:
 	add $18, $0, $18 # x inicial
 	add $19, $0, $19 # y inicial
 	add $20, $0, $20 # x final
-	add $21, $0, $21 # y final. nÃ£o colocar acima de 61!!!
+	add $21, $0, $21 # y final. nÃƒÂ£o colocar acima de 61!!!
 	add $22, $0, $22 # base
 	add $23, $0, $23 # altura
 	
@@ -60,7 +47,7 @@ animacao:
 	
             # chamada de funcao para
 	# carregar personagem na tela 
-	addi $8 $0 8192 # endereco do inicio do personagem na memoria
+	addi $8 $0 32768 # endereco do inicio do personagem na memoria
 	sll $8 $8 3 # 2 telas * 4 bits
 	mul $17 $22 $23 # linhas * colunas do desenho
 	sll $17 $17 2 
@@ -89,7 +76,7 @@ fimanimacao:
 
 	# chamada de funcao para
 	# carregar personagem na tela 
-	addi $8 $0 8192 # endereco do inicio do personagem na memoria
+	addi $8 $0 32768 # endereco do inicio do personagem na memoria
 	sll $8 $8 3 # 2 telas * 4 bits
 	mul $17 $22 $23 # linhas * colunas do desenho
 	sll $17 $17 2 
@@ -110,7 +97,7 @@ load:	lw $t1, 0($t8)
 	addi $t0, $t0, 4
 	addi $t8, $t8, 4
 	addi $t2, $t2, 1
-	bne $t2, 8192, load
+	bne $t2, 32768, load
 	jr $31
 	
 # funcao para guardar cenario e personagem na memoria	
@@ -156,7 +143,7 @@ fimlaco2:
 fimlaco1: 
             jr $31
             
-# funcao para carregar parte do cenÃ¡rio.
+# funcao para carregar parte do cenÃƒÂ¡rio.
 # parametros da funcao: 
             # Largura do personagem: $9
             # altura do personagem: $10
