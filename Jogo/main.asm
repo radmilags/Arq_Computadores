@@ -165,7 +165,7 @@ fimlaco1:
 carregafundo:  
             lui $15, 0x1001
 	    sll $11, $11, 2
-            sll $12, $12, 9 
+            sll $12, $12, 9
             add $15, $15, $11
             add $15, $15, $12 # posicao inicial a ser desenhada
             add $13, $0, $9 # largura 
@@ -197,7 +197,7 @@ fimlaco2.1:
 fimlaco1.1: 
             jr $31
 	
-# funÃ§Ã£o para passar tempo.
+# funcao para passar tempo.
 # taxa de espera: $8          
 timer:	
 	beq $8, $0, fimtimer
