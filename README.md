@@ -3,7 +3,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Assembly-Language-blueviolet?style=for-the-badge" alt="Assembly" />
   <img src="https://img.shields.io/badge/TADS-2º%20Período-yellow?style=for-the-badge" alt="TADS" />
-  <img src="https://img.shields.io/github/license/radmilags/Arq_Computadores?style=for-the-badge" alt="License" />
 </p>
 
 ## 📚 Descrição
